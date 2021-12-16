@@ -2,6 +2,8 @@
 $title = 'Success';
 require_once 'includes/header.php';
 require_once 'DB/conn.php';
+require_once 'sendemail.php';
+
 
 if(isset($_POST['submit'])){
   $fname = $_POST['firstname'];
@@ -11,8 +13,10 @@ if(isset($_POST['submit'])){
   $contact = $_POST['phone'];
   $specialty = $_POST['specialization'];
   $isSuccess = $crud->insertAttendee($fname,$lname,$dob,$email,$contact,$specialty);
-  
+  $specialtyName = $crud->getSpecialtyById($specialty);
+
   if($isSuccess){
+    SendEmail::sendMail($email,'Welcome to IT Confrence 2021', 'You Have Succesfully Registerd for this year\'s IT Confrence');
     include 'includes/successmessage.php';
   }
   else{
@@ -26,7 +30,7 @@ if(isset($_POST['submit'])){
     <div class="card" style="width: 18rem;">
   <div class="card-body">
     <h5 class="card-title"><?php echo $_POST['firstname']. ' '. $_POST['lastname'] ?></h5>
-    <h6 class="card-subtitle mb-2 text-muted"><?php echo $_POST['specialization'] ?></h6>
+    <h6 class="card-subtitle mb-2 text-muted"><?php echo $specialtyName['name']; ?> </h6>
     <p class="card-text">Date of Birth: <?php echo $_POST['dob'] ?></p>
     <p class="card-text">Email: <?php echo $_POST['email'] ?></p>
     <p class="card-text">Contact Number: <?php echo $_POST['phone'] ?></p>

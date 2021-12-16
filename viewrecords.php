@@ -1,7 +1,9 @@
 <?php 
 $title = 'View Records';
 require_once 'includes/header.php';
+require_once 'includes/auth_check.php';
 require_once 'DB/conn.php';
+
 $results = $crud->getAteendees();
 ?>
 <table class="table table-dark table-hover">

@@ -51,4 +51,4 @@ $results = $crud->getSpecialties();
 <br>
 <br>
 <br>
-    <?php require_once'includes/footer.php';?>
+    <?php require_once 'includes/footer.php';?>
