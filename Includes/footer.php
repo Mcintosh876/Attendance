@@ -1,6 +1,14 @@
- <div id="footer">
+ 
+ <div id="footer" class="p-3 bg-primary text-white fixxed-bott0m">
+      <p class="text-center">copyright &copy; - IT Confrence Attendance Systems <?php echo date('Y');?></p>
+ </div>
+ 
+ 
+ 
+ 
+ <!-- <div id="footer">
  <?php  echo 'Copyright' . date( 'y');
- ?>
+ ?> -->
  </div>
  </div>
  <!-- Optional JavaScript; choose one of the two! -->

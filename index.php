@@ -6,7 +6,7 @@ $results = $crud->getSpecialties();
 ?>
     <h1 class="text-center">Registration for IT Confrence</h1>
 
-<form method="post" action="success.php">
+<form method="post" enctype="multipart/form-data" action="success.php">
     <div class="form-group">
    <label for="FirstName">First Name</label>
    <input required type="text" class="form-control" id="first name"name="firstname"  >
@@ -44,6 +44,20 @@ $results = $crud->getSpecialties();
   aria-describedlby="phoneHelp">
   <small id="phoneHelp" class="form-text text-muted"> We'll never share your phone number with anyone else.</small>
 </div>
+<br>
+
+<div class="custom-file">
+  
+  <input type="file" accept= "image/* "class="custom-file-input" id="avatar" name="avatar">
+  <label class="custom-file-label" for= "avatar">Browse</label>
+<br>
+
+  <small id="avatar" class="form-text text-primary"> Picture upload is OPTIONAL!</small>
+  
+</div>
+<br>
+
+
 <button type="Submit" name="submit" class="btn btn-primary btn-block">submit</button>
 </form>
 

@@ -11,6 +11,7 @@ if(!isset($_GET['id'])){
   
 
 ?>
+<img src="<?php echo empty($result['avatar_path']) ? "uploads/blank.png" : $result['avatar_path'] ; ?>" class = "rounded" style = "width:20%; heaght: 20%"/>
 
 <div class="card" style="width: 18rem;">
   <div class="card-body">
