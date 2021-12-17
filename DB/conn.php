@@ -1,18 +1,18 @@
 <?php
 //development connection
-    $host = '127.0.0.1:3325';
-    $db= 'recruitment_db';
-    $user = 'root';
-    $pass = '';
-    $charset = 'utf8mb4';
+    // $host = '127.0.0.1:3325';
+    // $db= 'recruitment_db';
+    // $user = 'root';
+    // $pass = '';
+    // $charset = 'utf8mb4';
 
 
 //Remote Database Connection
-// $host = 'bgkax8mhm264noq7agxd-mysql.services.clever-cloud.com';
-// $db= 'bgkax8mhm264noq7agxd';
-// $user = 'uvichbm9eksfl2wn';
-// $pass = 'loGjlxXejW7qGUrz1Mnv';
-// $charset = 'utf8mb4';
+$host = 'b1djioevjqnsn0xolnib-mysql.services.clever-cloud.com';
+$db= 'b1djioevjqnsn0xolnib';
+$user = 'uymmsib3mqxfk6ru';
+$pass = 'dgsbgDRql8WIjDzOFRm5';
+$charset = 'utf8mb4';
 
 
 
