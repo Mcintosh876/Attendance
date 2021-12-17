@@ -9,10 +9,11 @@ if(isset($_POST['submit'])){
     $dob = $_POST['dob'];
     $email = $_POST['email'];
     $contact = $_POST['phone'];
-    $specialty = $_POST['specialization'];
+    $gender = $_POST['gender']; 
+    $adress = $_POST['adress'];
 
 
-    $result = $crud-> editAttendee($id, $fname,$lname,$dob,$email,$contact,$specialty);
+    $result = $crud-> editAttendee($id, $fname,$lname,$dob,$email,$contact,$gender,$adress);
 
     if($result){
         header("Location: viewrecords.php");

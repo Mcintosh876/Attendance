@@ -1,5 +1,5 @@
 <?php 
-$title = 'User Login';
+$title = 'Admin Login';
 require_once 'includes/header.php';
 require_once 'DB/conn.php';
 $user = new user($pdo);
@@ -28,14 +28,14 @@ $result = $user->getUser($username,$new_password);
  <form action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="post">
  <table class= "table table-sm">
      <tr>
-         <td><lable for="username">Username: *</lable></td>
+         <td><lable for="username">Username: </lable></td>
          <td><input type= "text" name="username" class="form-control" id="username" value="<?php if($_SERVER['REQUEST_METHOD'] == 'POST') echo $_POST['username']; ?>" >
          </td>
          
      </tr>
 
      <tr>
-         <td><lable for="password">Password: *</lable></td>
+         <td><lable for="password">Password: </lable></td>
          <td><input type= "password" name="password" class="form-control" id="password">
           
         </td> 

@@ -1,6 +1,6 @@
  
- <div id="footer" class="p-3 bg-primary text-white fixxed-bott0m">
-      <p class="text-center">copyright &copy; - IT Confrence Attendance Systems <?php echo date('Y');?></p>
+ <div id="footer" class=" bg-info text-white fixed-bottom">
+      <p class="text-center">copyright &copy; - Department of Correctional Services Recrutement <?php echo date('Y');?></p>
  </div>
  
  

@@ -9,7 +9,7 @@ if(!$_GET['id']){
 
     $id=$_GET['id'];
 
-    $result = $crud->deleteAttendeee($id);
+    $result = $crud->deleteApplicant($id);
     if($result){
         header("Location: viewrecords.php");
     }

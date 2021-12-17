@@ -1,5 +1,5 @@
 <?php 
-$title = 'Success';
+$title = 'Ascendancy';
 require_once 'includes/header.php';
 require_once 'DB/conn.php';
 require_once 'sendemail.php';
@@ -11,7 +11,8 @@ if(isset($_POST['submit'])){
   $dob = $_POST['dob'];
   $email = $_POST['email'];
   $contact = $_POST['phone'];
-  $specialty = $_POST['specialization'];
+  $gender= $_POST['gender'];
+  $adress= $_POST['adress'];
 
 $oring_file = $_FILES["avatar"]["tmp_name"];
 $ext =pathinfo($_FILES["avatar"]["name"],PATHINFO_EXTENSION);
@@ -21,11 +22,11 @@ move_uploaded_file($oring_file,$destination);
 
 
 
-  $isSuccess = $crud->insertAttendee($fname,$lname,$dob,$email,$contact,$specialty,$destination);
-  $specialtyName = $crud->getSpecialtyById($specialty);
+  $isSuccess = $crud->insertAttendee($fname,$lname,$dob,$email,$contact,$gender,$destination,$adress);
+  $GenderName = $crud->getGenderById($gender);
 
   if($isSuccess){
-    SendEmail::sendMail($email,'Welcome to IT Confrence 2021', 'You Have Succesfully Registerd for this year\'s IT Confrence');
+    SendEmail::sendMail($email,'Recruitment 2021', 'You Have Succesfully Registerd for if scucessfull we will contact you');
     include 'includes/successmessage.php';
   }
   else{
@@ -39,10 +40,12 @@ move_uploaded_file($oring_file,$destination);
     <div class="card" style="width: 18rem;">
   <div class="card-body">
     <h5 class="card-title"><?php echo $_POST['firstname']. ' '. $_POST['lastname'] ?></h5>
-    <h6 class="card-subtitle mb-2 text-muted"><?php echo $specialtyName['name']; ?> </h6>
+    <h6 class="card-subtitle mb-2 text-muted"><?php echo $GenderName['name']; ?> </h6>
     <p class="card-text">Date of Birth: <?php echo $_POST['dob'] ?></p>
     <p class="card-text">Email: <?php echo $_POST['email'] ?></p>
     <p class="card-text">Contact Number: <?php echo $_POST['phone'] ?></p>
+    <p class="card-text">Address: <?php echo $_POST['adress'] ?></p>
+
 
   </div>
 </div>

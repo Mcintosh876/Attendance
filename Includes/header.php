@@ -14,19 +14,27 @@ include_once 'includes/session.php'
     <link rel="stylesheet" href="//code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="css/site.css" />
 
-    <title>Attendance -<?php echo $title?> </title>
+    <title>Recruitment -<?php echo $title?> </title>
   </head>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-info">
     <div class="container-fluid">
 
-      <a class="navbar-brand" href="index.php">IT Confrence</a>
+    <a class="navbar-brand" href="index.php">
+      <img src="images/logo.png" alt="" width="60%" height="50%" class="d-inline-block align-text-top">
+     
+    </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav mr-auto">
+          
+          <a class="nav-link" href="about.php">About Us</a>
           <a class="nav-link active" aria-current="page" href="index.php">Home</a>
-          <a class="nav-link" href="viewrecords.php">View Attendees</a>
+          <a class="nav-link" href="viewrecords.php">Applicants</a>
+          <a class="nav-link" href="gallery.php">Gallery</a>
+
+          
          
         </div>
       </div>

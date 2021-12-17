@@ -1,5 +1,5 @@
 <?php 
-$title = 'View Record';
+$title = 'View Submission';
 require_once 'includes/header.php';
 require_once 'includes/auth_check.php';
 require_once 'DB/conn.php';
@@ -7,7 +7,7 @@ require_once 'DB/conn.php';
 if(!isset($_GET['id'])){
   
 }else{  $id = $_GET['id'];
-    $result = $crud->getAttendeeDetails($id);
+    $result = $crud->getApplicantDetails($id);
   
 
 ?>
@@ -20,6 +20,8 @@ if(!isset($_GET['id'])){
     <p class="card-text">Date of Birth: <?php echo  $result['dateofbirth'] ?></p>
     <p class="card-text">Email: <?php echo  $result['emailaddress'] ?></p>
     <p class="card-text">Contact Number: <?php echo  $result['contactnumber'] ?></p>
+    <p class="card-text">Address: <?php echo  $result['adress'] ?></p>
+
 
   </div>
 </div>

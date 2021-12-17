@@ -3,7 +3,7 @@ $title = 'Edit';
 require_once 'includes/header.php';
 require_once 'includes/auth_check.php';
 require_once 'DB/conn.php';
-$results = $crud->getSpecialties();
+$results = $crud->getApplicant();
 if(!isset($_GET['id']))
 {
     include 'includes/errormessage.php';
@@ -11,7 +11,7 @@ if(!isset($_GET['id']))
 }
 else{
     $id= $_GET['id'];
-    $attendee = $crud->getAttendeeDetails($id);
+    $attendee = $crud->getApplicantDetails($id);
 
 
 ?>
@@ -35,10 +35,10 @@ else{
  
 </div>
 <div class="form-group">
-<label for="Area of Specialization">Specialty</label>
- <select class="form-select" id=" Specialization" name=" specialization">
+<label for="gender">Gender</label>
+ <select class="form-select" id=" gender" name=" gender">
    <?php while ($r = $results->fetch(PDO::FETCH_ASSOC)){?>
- <option value="<?php echo $r['specialty_id'] ?>"<?php if($r['specialty_id'] == $attendee['specialty_id']) echo 'selected'?>>
+ <option value="<?php echo $r['gender_id'] ?>"<?php if($r['gender_id'] == $attendee['gender_id']) echo 'selected'?>>
     <?php echo $r['name']; ?></option>
  <?php } ?>
 </select>
@@ -50,6 +50,11 @@ else{
   aria-describedlby="emailHelp">
   <small id="emailHelp" class="form-text text-muted"> We'll never share your email with anyone else.</small>
 </div>
+<div class="form-group">
+  <label for="Adress">Address</label>
+  <input required type="text" class="form-control" id="adress" name="adress" >
+</div>
+<br>
 
 <div class="form-group">
   <label for="phone">Phone Number</label>

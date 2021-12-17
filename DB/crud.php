@@ -7,9 +7,9 @@ function __construct($conn){
 
      }
 
-   public  function insertAttendee($fname,$lname,$dob,$email,$contact,$specialty,$avatar_path){
+   public  function insertAttendee($fname,$lname,$dob,$email,$contact,$gender,$avatar_path,$adress){
         try {
-            $sql = "INSERT INTO attendee (firstname,lastname,dateofbirth,emailaddress,contactnumber,specialty_id,avatar_path)VALUES(:fname,:lname,:dob,:email,:contact,:specialty,:avatar_path)";
+            $sql = "INSERT INTO `attendee`(`firstname`, `lastname`, `dateofbirth`, `emailaddress`, `contactnumber`, `gender_id`, `avatar_path`, `adress`) VALUES(:fname,:lname,:dob,:email,:contact,:gender,:avatar_path,:adress)";
             $stmt = $this->db->prepare($sql);
 
             $stmt->bindparam(':fname',$fname);
@@ -17,8 +17,10 @@ function __construct($conn){
             $stmt->bindparam(':dob',$dob);
             $stmt->bindparam(':email',$email);
             $stmt->bindparam(':contact',$contact);
-            $stmt->bindparam(':specialty',$specialty);
+            $stmt->bindparam(':gender',$gender);
             $stmt->bindparam(':avatar_path',$avatar_path);
+            $stmt->bindparam(':adress',$adress);
+
 
 
             $stmt->execute();
@@ -29,9 +31,9 @@ function __construct($conn){
         }
      }
 
-     public function editAttendee($id, $fname,$lname,$dob,$email,$contact,$specialty){
+     public function editAttendee($id, $fname,$lname,$dob,$email,$contact,$gender,$adress){
         try{
-         $sql = "UPDATE`attendee` SET `firstname`=:fname,`lastname`=:lname,`dateofbirth`=:dob,`emailaddress`=:email,`contactnumber`=:contact,`specialty_id`=:specialty WHERE attendee_id = :id " ;
+         $sql = "UPDATE`attendee` SET `firstname`=:fname,`lastname`=:lname,`dateofbirth`=:dob,`emailaddress`=:email,`contactnumber`=:contact,`gender_id`=:gender, adress=:adress WHERE attendee_id = :id " ;
 
          $stmt = $this->db->prepare($sql);
             
@@ -41,7 +43,9 @@ function __construct($conn){
             $stmt->bindparam(':dob',$dob);
             $stmt->bindparam(':email',$email);
             $stmt->bindparam(':contact',$contact);
-            $stmt->bindparam(':specialty',$specialty);
+            $stmt->bindparam(':gender',$gender);
+            $stmt->bindparam(':adress',$adress);
+
 
             $stmt->execute();
             return true;
@@ -53,9 +57,9 @@ function __construct($conn){
 
      }
 
-     public function getAteendees(){
+     public function getApplicant(){
          try{
-              $sql = "SELECT * FROM `attendee` a inner join specialties s on a.specialty_id = s.specialty_id";
+              $sql = "SELECT * FROM `attendee` a inner join gender s on a.gender_id = s.gender_id";
         $result = $this-> db->query($sql);
         return $result;
          }catch (PDOException $e) {
@@ -65,9 +69,9 @@ function __construct($conn){
      }
 
 
-     public function getAttendeeDetails($id){
+     public function getApplicantDetails($id){
          try{
-        $sql = "select * from attendee a inner join specialties s on a.specialty_id = s.specialty_id where attendee_id = :id";
+        $sql = "select * from attendee a inner join gender s on a.gender_id = s.gender_id where attendee_id = :id";
         $stmt = $this-> db->prepare($sql);
         $stmt->bindparam(':id', $id);
         $stmt->execute();
@@ -80,7 +84,7 @@ function __construct($conn){
         
     }
 
-public function deleteAttendeee($id){
+public function deleteApplicant($id){
     try{
         $sql = "delete from attendee where attendee_id =:id";
     $stmt = $this-> db->prepare($sql);
@@ -93,9 +97,9 @@ public function deleteAttendeee($id){
     } 
 
 }
-     public function getSpecialties(){
+     public function getGender(){
         try{
-        $sql = "SELECT * FROM `specialties`";
+        $sql = "SELECT * FROM `gender`";
         $result = $this-> db->query($sql);
         return $result; 
         }catch (PDOException $e) {
@@ -104,9 +108,9 @@ public function deleteAttendeee($id){
         }
        
     }
-   public function getSpecialtyById($id){
+   public function getGenderById($id){
         try{
-        $sql = "SELECT * FROM `specialties` WHERE specialty_id = :id";
+        $sql = "SELECT * FROM `gender` WHERE gender_id = :id";
         $stmt = $this-> db->prepare($sql);
         $stmt->bindparam(':id', $id);
         $stmt->execute();

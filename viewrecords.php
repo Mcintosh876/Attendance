@@ -4,14 +4,15 @@ require_once 'includes/header.php';
 require_once 'includes/auth_check.php';
 require_once 'DB/conn.php';
 
-$results = $crud->getAteendees();
+$results = $crud->getApplicant();
 ?>
 <table class="table table-dark table-hover">
     <tr> 
         <th>#</th>
         <th>First Name</th>
         <th>Last Name</th>
-        <th>Specialty</th>
+        <th>Gender</th>
+        <th>Address</th>
         <th>Actions</th>
     </tr>
     <?php 
@@ -21,6 +22,8 @@ $results = $crud->getAteendees();
                 <td><?php echo $r['firstname']?></td>
                 <td><?php echo $r['lastname']?></td>
                 <td><?php echo $r['name']?></td>
+                <td><?php echo $r['adress']?></td>
+
                 <td>
                     <a href="view.php?id=<?php echo $r['attendee_id'] ?>" class="btn btn-primary">view</a>
                       <a href="edit.php?id=<?php echo $r['attendee_id'] ?>" class="btn btn-warning">Edit</a>
