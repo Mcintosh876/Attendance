@@ -1,7 +1,7 @@
 <?php 
 $title = 'Index';
 require_once 'includes/header.php';
-require_once 'DB/conn.php';
+require_once 'db/conn.php';
 $results = $crud->getGender();
 ?>
     <h1 class="text-center">Recruit Application Form</h1>

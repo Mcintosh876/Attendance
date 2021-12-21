@@ -1,7 +1,7 @@
 <?php 
 $title = 'Admin Login';
 require_once 'includes/header.php';
-require_once 'DB/conn.php';
+require_once 'db/conn.php';
 $user = new user($pdo);
 
 if($_SERVER['REQUEST_METHOD'] == 'POST'){

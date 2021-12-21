@@ -1,7 +1,7 @@
 <?php 
 $title = 'Ascendancy';
 require_once 'includes/header.php';
-require_once 'DB/conn.php';
+require_once 'db/conn.php';
 require_once 'sendemail.php';
 
 
