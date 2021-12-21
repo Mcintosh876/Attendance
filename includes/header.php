@@ -32,7 +32,7 @@ include_once 'includes/session.php'
           <a class="nav-link" href="about.php">About Us</a>
           <a class="nav-link active" aria-current="page" href="index.php">Home</a>
           <a class="nav-link" href="viewrecords.php">Applicants</a>
-          <a class="nav-link" href="gallery.php">Gallery</a>
+        
 
           
          
