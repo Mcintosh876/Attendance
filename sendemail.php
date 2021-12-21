@@ -4,7 +4,7 @@ require_once 'C:\xampp\htdocs\Attendance\vendor\autoload.php';
 class SendEmail{
 
     public static function sendMail($to,$suject,$content){
-        $key = 'ffdghjkljhgfdsrdgfhgjhkjlklkjhgf';
+        $key = 'ffdghjkljhgfdsrdgfhgjhkfdjlklkjhgf';
         $email = new \SendGrid\Mail\Mail();
         $email->setFrom("chevvaun@yahoo.com","ChevaunMcIntosh");
         $email->setSubject($suject);
